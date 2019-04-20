@@ -1,0 +1,1271 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PlayerDetailActivity"
+    android:background="@color/colorBG"
+    >
+
+    <ProgressBar
+        android:id="@+id/detailProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:visibility="visible"></ProgressBar>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:background="@color/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+
+        <ImageButton
+            android:src="@drawable/ic_action_back"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerCrop"
+            android:onClick="onClickBack"
+            android:background="@null"
+            android:tint="@android:color/white"
+            />
+    </android.support.v7.widget.Toolbar>
+
+    <com.devashishthakur.pesapp.MyTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/com.devashishthakur.pesapp.MyTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/toolbar"
+        android:textColor="@color/colorText"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:text="Loading.."
+        android:layout_marginBottom="10dp"/>
+
+    <ScrollView
+        android:id="@+id/scrollViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/com.devashishthakur.pesapp.MyTextView"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Squad No."
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_squad_no"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="7"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Team Name"
+                    android:textColor="@color/colorText"
+                    android:textSize="20sp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_team"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="PM Black White"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="League"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_league"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="Italian League"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Nationality"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_nationality"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="Portugal"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Region"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_region"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="Europe"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Height"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_height"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="185"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Weight"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="Europe"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Age"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_age"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="33"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Foot"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_foot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="Right Foot"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Position"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_position"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:gravity="center"
+                    android:text="CF"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <com.devashishthakur.pesapp.MyTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal"
+                android:text="ABILITIES"
+                android:textStyle="bold"
+                android:textColor="@color/colorText"
+                android:textSize="28sp" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Attacking Prowess"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_attacking_prowress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="92"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Ball Control"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_ball_control"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="88"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Dribbling"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_dribbling"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Low Pass"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_low_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Lofted Pass"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_lofted_pass"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="77"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Finishing"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_finishing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="92"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Place Kicking"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_place_kicking"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Swerve"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_swerve"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Header"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_header"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Defensive Prowress"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_defensive_prowress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Interceptions"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_interceptions"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Kicking Power"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_kicking_power"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="94"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Speed"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_speed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Explosive Power"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_explosive_power"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Balance"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_balance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Physical Contact"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_physical_contact"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Jump"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_jump"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Stamina"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_stamina"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Goalkeeping"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_goalkeeping"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Catching"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_catching"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Clearing"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_clearing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Reflexes"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_reflex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Coverage"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_coverage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Weak Foot Usage"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_weak_foot_usage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20sp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Weak Foot Accuracy"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_weak_foot_accuracy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="9.9"
+                    android:gravity="start"
+                    android:textStyle="bold"
+                    android:text="Injury Resistance"
+                    android:textColor="@color/colorText"
+                    android:textSize="20dp"
+                     />
+
+                <com.devashishthakur.pesapp.MyTextView
+                    android:id="@+id/player_injury_resistance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.1"
+                    android:background="@drawable/bgtext"
+                    android:gravity="center"
+                    android:padding="10dp"
+                    android:text="84"
+                    android:textColor="@color/abilityColor"
+                    android:textSize="20dp"
+                     />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</RelativeLayout>

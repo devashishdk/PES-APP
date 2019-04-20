@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_reader"
+        android:title="News"
+        android:icon="@drawable/ic_action_reader"/>
+    <item
+        android:id="@+id/nav_social"
+        android:title="Patch"
+        android:icon="@drawable/ic_action_patch"/>
+    <item
+        android:id="@+id/nav_ask"
+        android:title="Guide"
+        android:icon="@drawable/ic_action_guide"/>
+</menu>
